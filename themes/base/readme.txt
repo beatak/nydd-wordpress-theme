@@ -1,5 +1,5 @@
-= TWENTY ELEVEN =
+= NYDD =
 
-* by the WordPress team, http://wordpress.org/
+* based on Twenty Eleven, designed by Takashi
 
-== ABOUT TWENTY ELEVEN ==
+== ABOUT NYDD BASE ==
