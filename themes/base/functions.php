@@ -76,7 +76,7 @@ function twentyeleven_setup() {
 	add_editor_style();
 
 	// Load up our theme options page and related code.
-	require( get_template_directory() . '/inc/theme-options.php' );
+	// require( get_template_directory() . '/inc/theme-options.php' );
 
 	// Grab Twenty Eleven's Ephemera widget.
 	require( get_template_directory() . '/inc/widgets.php' );
@@ -91,7 +91,7 @@ function twentyeleven_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
 	// Add support for custom backgrounds
-	add_custom_background();
+	// add_custom_background();
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
