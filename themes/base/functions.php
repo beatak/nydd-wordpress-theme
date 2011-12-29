@@ -581,3 +581,25 @@ function twentyeleven_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
+/**
+ * Returns the default options for Twenty Eleven.
+ *
+ * @since Twenty Eleven 1.0
+ */
+function twentyeleven_get_theme_options() {
+	$default_theme_options = array(
+		'color_scheme' => 'light',
+		'link_color'   => array(
+			'value' => 'light',
+			'label' => __( 'Light', 'twentyeleven' ),
+			'thumbnail' => get_template_directory_uri() . '/inc/images/light.png',
+			'default_link_color' => '#1b8be0',
+		),
+		'theme_layout' => 'content-sidebar',
+	);
+
+	if ( is_rtl() )
+ 		$default_theme_options['theme_layout'] = 'sidebar-content';
+
+	return apply_filters( 'twentyeleven_default_theme_options', $default_theme_options );
+}
