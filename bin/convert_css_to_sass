@@ -1,0 +1,40 @@
+#!/bin/sh
+
+cut="/usr/bin/cut"
+sass_convert="/usr/bin/sass-convert"
+
+if [ $# -ne 1 ];then
+    echo "USAGE: convert_css_to_sass ~/target/directory"
+    exit
+fi
+if [ -z "$1" ];then
+    echo "USAGE: convert_css_to_sass ~/target/directory"
+    exit
+fi
+
+first=`echo $1| $cut -c1`
+case $first in
+    /)
+        #absolute path is passed
+        target=$1
+        ;;
+    *)
+        current=$(cd $(dirname $0); pwd)
+        target=$(cd $current/$1; pwd)
+        ;;
+esac
+
+if [ ! -d $target ]; then
+    echo "$target doesn't seem to exist"
+    exit
+fi
+
+filenames=$(find ${target} -type f -name *.css)
+
+for file in ${filenames[@]};do
+    filepath=${file%/*}
+    filename=${file##*/}
+    filename_noextension=${filename%.*}
+    filename_extension=${filename##*.}
+    $sass_convert -F css -T sass $file $filepath/$filename_noextension.sass
+    done
