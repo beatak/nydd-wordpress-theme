@@ -1,0 +1,114 @@
+/* =Print
+ *-----------------------------------------------
+@media print
+  body
+    background: none !important
+    font-size: 10pt
+  footer.entry-meta a[rel=bookmark]
+    &:link:after, &:visited:after
+      content: " [" attr(href) "] "
+      /* Show URLs
+  #page
+    clear: both !important
+    display: block !important
+    float: none !important
+    max-width: 100%
+    position: relative !important
+  #branding
+    border-top: none !important
+    padding: 0
+    hgroup
+      margin: 0
+  #site-title a
+    font-size: 21pt
+  #site-description
+    font-size: 10pt
+  #branding
+    #searchform, img
+      display: none
+  #access
+    display: none
+  #main
+    border-top: none
+    box-shadow: none
+  #primary
+    float: left
+    margin: 0
+    width: 100%
+  #content
+    margin: 0
+    width: auto
+  .singular
+    #content
+      margin: 0
+      width: 100%
+    .entry-header .entry-meta
+      position: static
+  .entry-meta .edit-link a, #content nav
+    display: none
+  .singular
+    .entry-header, .entry-content, footer.entry-meta, #comments-title
+      margin: 0
+      width: 100%
+    .hentry
+      padding: 0
+  .entry-title, .singular .entry-title
+    font-size: 21pt
+  .entry-meta
+    font-size: 10pt
+  .entry-header .comments-link, .page-link
+    display: none
+  .singular #author-info
+    background: none
+    border-bottom: none
+    border-top: none
+    margin: 2.2em 0 0
+    padding: 0
+  #respond, .widget-area, #colophon
+    display: none
+  /* Comments
+  .commentlist
+    > li.comment
+      background: none
+      border: 1px solid #dddddd
+      -moz-border-radius: 3px 3px 3px 3px
+      border-radius: 3px 3px 3px 3px
+      margin: 0 auto 1.625em
+      padding: 1.625em
+      position: relative
+      width: auto
+    .avatar
+      height: 39px
+      left: 2.2em
+      top: 2.2em
+      width: 39px
+    li.comment
+      .comment-meta
+        line-height: 1.625em
+        margin-left: 50px
+      .fn
+        display: block
+      .comment-content
+        margin: 1.625em 0 0
+    .comment-edit-link
+      display: none
+    > li
+      &::before, &.bypostauthor::before
+        content: ""
+    .reply
+      display: none
+    > li.bypostauthor
+      color: #444444
+      .comment-meta
+        color: #666666
+      &:before
+        content: none
+    .children > li.bypostauthor
+      background: white
+      border-color: #dddddd
+      > article
+        color: #666666
+        .comment-meta
+          color: #666666
+  /* Post author highlighting
+  /* Post Author threaded comments

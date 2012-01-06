@@ -1,0 +1,50 @@
+/* =Image
+ *-----------------------------------------------
+
+.indexed.format-image
+  .entry-header
+    min-height: 61px
+    /* Prevent the comment icon from colliding with the image when there is no title
+  .entry-content
+    padding-top: 0.5em
+  p
+    margin-bottom: 0
+    img
+      margin-bottom: 0
+  footer.entry-meta
+    background: #dddddd
+    margin-top: -7px
+    padding: 20px 30px
+    overflow: hidden
+  div.entry-meta
+    display: inline-block
+    float: left
+    width: 35%
+    + div.entry-meta
+      float: none
+      width: 65%
+  .entry-meta span
+    &.cat-links, &.tag-links, &.comments-link
+      display: block
+  footer.entry-meta a
+    color: #444444
+    &:hover
+      color: white
+
+#content .indexed.format-image img
+  border: none
+  max-width: 100%
+  padding: 0
+
+.indexed.format-image
+  .wp-caption
+    background: #111111
+    margin-bottom: 0
+    max-width: 96%
+    padding: 11px
+    .wp-caption-text
+      color: #dddddd
+      &:before
+        color: #444444
+  a:hover img
+    opacity: 0.8

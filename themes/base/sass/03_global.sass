@@ -1,0 +1,184 @@
+/* =Global
+ *-----------------------------------------------
+
+body, input, textarea
+  color: #373737
+  font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-weight: 300
+  line-height: 1.625
+
+body
+  background: #e2e2e2
+
+#page
+  background: white
+
+/* Headings
+
+h1, h2, h3, h4, h5, h6
+  clear: both
+
+hr
+  background-color: #cccccc
+  border: 0
+  height: 1px
+  margin-bottom: 1.625em
+
+/* Text elements
+
+p
+  margin-bottom: 1.625em
+
+ul, ol
+  margin: 0 0 1.625em 2.5em
+
+ul
+  list-style: square
+
+ol
+  list-style-type: decimal
+  ol
+    list-style: upper-alpha
+    ol
+      list-style: lower-roman
+      ol
+        list-style: lower-alpha
+
+ul ul, ol ol, ul ol, ol ul
+  margin-bottom: 0
+
+dl
+  margin: 0 1.625em
+
+dt
+  font-weight: bold
+
+dd
+  margin-bottom: 1.625em
+
+strong
+  font-weight: bold
+
+cite, em, i
+  font-style: italic
+
+blockquote
+  font-family: Georgia, "Bitstream Charter", serif
+  font-style: italic
+  font-weight: normal
+  margin: 0 3em
+  em, i
+    font-style: normal
+  cite
+    font-style: normal
+    color: #666666
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 300
+    letter-spacing: 0.05em
+    text-transform: uppercase
+
+pre
+  background: #f4f4f4
+  font: 13px "Courier 10 Pitch", Courier, monospace
+  line-height: 1.5
+  margin-bottom: 1.625em
+  overflow: auto
+  padding: 0.75em 1.625em
+
+code, kbd
+  font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace
+
+abbr, acronym, dfn
+  border-bottom: 1px dotted #666666
+  cursor: help
+
+address
+  display: block
+  margin: 0 0 1.625em
+
+ins
+  background: #fff9c0
+  text-decoration: none
+
+sup, sub
+  font-size: 10px
+  height: 0
+  line-height: 1
+  position: relative
+  vertical-align: baseline
+
+sup
+  bottom: 1ex
+
+sub
+  top: 0.5ex
+
+/* Forms
+
+input
+  &[type=text], &[type=password]
+    background: #fafafa
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+    border: 1px solid #dddddd
+    color: #888888
+
+textarea
+  background: #fafafa
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)
+  border: 1px solid #dddddd
+  color: #888888
+
+input[type=text]:focus
+  color: #373737
+
+textarea
+  padding-left: 3px
+  width: 98%
+  &:focus
+    color: #373737
+
+input
+  &[type=text]
+    padding: 3px
+  &#s
+    background: url(images/search.png) no-repeat 5px 6px
+    -moz-border-radius: 2px
+    border-radius: 2px
+    font-size: 14px
+    height: 22px
+    line-height: 1.2em
+    padding: 4px 10px 4px 28px
+  &#searchsubmit
+    display: none
+
+/* Links
+
+a
+  color: #1982d1
+  text-decoration: none
+  &:focus, &:active, &:hover
+    text-decoration: underline
+
+/* Assistive text
+
+.assistive-text
+  position: absolute !important
+  clip: rect(1px 1px 1px 1px)
+  /* IE6, IE7
+  clip: rect(1px, 1px, 1px, 1px)
+
+#access a.assistive-text
+  &:active, &:focus
+    background: #eeeeee
+    border-bottom: 1px solid #dddddd
+    color: #1982d1
+    clip: auto !important
+    font-size: 12px
+    position: absolute
+    text-decoration: underline
+    top: 0
+    left: 7.6%

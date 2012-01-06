@@ -1,0 +1,312 @@
+/* =Showcase
+ *-----------------------------------------------
+
+h1.showcase-heading
+  color: #666666
+  font-size: 10px
+  font-weight: 500
+  letter-spacing: 0.1em
+  line-height: 2.6em
+  text-transform: uppercase
+
+/* Intro
+
+article.intro
+  background: #f9f9f9
+  border-bottom: none
+  margin: -1.855em -8.9% 1.625em
+  padding: 0 8.9%
+  .entry-title
+    display: none
+  .entry-content
+    color: #111111
+    font-size: 16px
+    padding: 1.625em 0 0.625em
+  .edit-link a
+    background: #aaaaaa
+    -moz-border-radius: 3px
+    border-radius: 3px
+    color: white
+    font-size: 12px
+    padding: 0 8px
+    position: absolute
+    top: 30px
+    right: 20px
+    text-decoration: none
+    &:hover, &:focus, &:active
+      background: #777777
+
+/* Featured post
+
+section.featured-post
+  float: left
+  margin: -1.625em -8.9% 1.625em
+  padding: 1.625em 8.9% 0
+  position: relative
+  width: 100%
+  .hentry
+    border: none
+    color: #666666
+    margin: 0
+  .entry-meta
+    clip: rect(1px 1px 1px 1px)
+    /* IE6, IE7
+    clip: rect(1px, 1px, 1px, 1px)
+    position: absolute !important
+  .attachment-small-feature
+    float: right
+    height: auto
+    margin: 0 -8.9% 1.625em 0
+    max-width: 59%
+    position: relative
+    right: -15px
+  &.small
+    padding-top: 0
+  .attachment-small-feature
+    &:hover, &:focus, &:active
+      opacity: 0.8
+
+/* Small featured post
+
+article.feature-image.small
+  float: left
+  margin: 0 0 1.625em
+  width: 45%
+  .entry-title
+    line-height: 1.2em
+  .entry-summary
+    color: #555555
+    font-size: 13px
+    p a
+      background: #222222
+      color: #eeeeee
+      display: block
+      left: -23.8%
+      padding: 9px 26px 9px 85px
+      position: relative
+      text-decoration: none
+      top: 20px
+      width: 180px
+      z-index: 1
+      &:hover
+        background: #1982d1
+        color: #eeeeee
+        color: rgba(255, 255, 255, 0.8)
+
+/* Large featured post
+
+section.feature-image.large
+  border: none
+  max-height: 288px
+  padding: 0
+  width: 100%
+  .showcase-heading
+    display: none
+  .hentry
+    border-bottom: none
+    left: 9%
+    margin: 1.625em 9% 0 0
+    position: absolute
+    top: 0
+
+article.feature-image.large .entry-title a
+  background: #222222
+  background: rgba(0, 0, 0, 0.8)
+  -moz-border-radius: 3px
+  border-radius: 3px
+  color: white
+  display: inline-block
+  font-weight: 300
+  padding: 0.2em 20px
+
+section.feature-image.large
+  &:hover .entry-title a, .entry-title:hover a
+    background: #eeeeee
+    background: rgba(255, 255, 255, 0.8)
+    color: #222222
+
+article.feature-image.large .entry-summary
+  display: none
+
+section.feature-image.large img
+  display: block
+  height: auto
+  max-width: 117.9%
+  padding: 0 0 6px
+
+/* Featured Slider
+
+.featured-posts
+  border-bottom: 1px solid #dddddd
+  display: block
+  height: 328px
+  margin: 1.625em -8.9% 20px
+  max-width: 1000px
+  padding: 0
+  position: relative
+  overflow: hidden
+  .showcase-heading
+    padding-left: 8.9%
+  section.featured-post
+    background: white
+    height: 288px
+    left: 0
+    margin: 0
+    position: absolute
+    top: 30px
+    width: auto
+    -webkit-transition-duration: 200ms
+    -webkit-transition-property: opacity, visibility
+    -webkit-transition-timing-function: ease
+    -moz-transition-duration: 200ms
+    -moz-transition-property: opacity, visibility
+    -moz-transition-timing-function: ease
+    opacity: 0
+    visibility: hidden
+    &.large
+      max-width: 100%
+      overflow: hidden
+  #featured-post-1
+    opacity: 1
+    visibility: visible
+
+.featured-post
+  .feature-text:after
+    content: " "
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, white))
+    /* Chrome,Safari4+
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* Opera11.10+
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* IE10+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+    /* IE6-9
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* W3C
+    width: 100%
+    height: 45px
+    position: absolute
+    top: 230px
+  .feature-image.small:after
+    content: " "
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, white))
+    /* Chrome,Safari4+
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* Chrome10+,Safari5.1+
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* Opera11.10+
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* IE10+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+    /* IE6-9
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%)
+    /* W3C
+    width: 100%
+    height: 45px
+    position: absolute
+    top: 230px
+    top: 253px
+
+#content .feature-slider
+  top: 5px
+  right: 8.9%
+  overflow: visible
+  position: absolute
+
+.feature-slider
+  ul
+    list-style-type: none
+    margin: 0
+  li
+    float: left
+    margin: 0 6px
+  a
+    background: #3c3c3c
+    background: rgba(60, 60, 60, 0.9)
+    -moz-border-radius: 12px
+    border-radius: 12px
+    -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.5)
+    -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.5)
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5), inset 0 0 2px rgba(255, 255, 255, 0.5)
+    display: block
+    width: 14px
+    height: 14px
+    &.active
+      background: #1982d1
+      -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.8)
+      -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.8)
+      box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.8)
+      cursor: default
+      opacity: 0.5
+
+/* Recent Posts
+
+section.recent-posts
+  padding: 0 0 1.625em
+  .hentry
+    border: none
+    margin: 0
+  .other-recent-posts
+    border-bottom: 1px solid #dddddd
+    list-style: none
+    margin: 0
+    li
+      padding: 0.313em 0
+      position: relative
+    .entry-title
+      border-top: 1px solid #dddddd
+      font-size: 17px
+    a[rel="bookmark"]
+      color: #373737
+      float: left
+      max-width: 84%
+      &:after
+        content: "-"
+        color: transparent
+        font-size: 11px
+    .comments-link
+      a
+        border-bottom: 2px solid #999999
+        bottom: -2px
+        color: #444444
+        display: block
+        font-size: 10px
+        font-weight: 500
+        line-height: 2.763em
+        padding: 0.313em 0 0.313em 1em
+        position: absolute
+        right: 0
+        text-align: right
+        text-transform: uppercase
+        z-index: 1
+      > span
+        border-bottom: 2px solid #999999
+        bottom: -2px
+        color: #444444
+        display: block
+        font-size: 10px
+        font-weight: 500
+        line-height: 2.763em
+        padding: 0.313em 0 0.313em 1em
+        position: absolute
+        right: 0
+        text-align: right
+        text-transform: uppercase
+        z-index: 1
+        border-color: #bbbbbb
+        color: #888888
+      a:hover
+        color: #1982d1
+        border-color: #1982d1
+    li:after
+      clear: both
+      content: "."
+      display: block
+      height: 0
+      visibility: hidden
