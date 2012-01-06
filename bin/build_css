@@ -4,8 +4,8 @@ SASS="/usr/bin/sass"
 FIND="/usr/bin/find"
 XARGS="/usr/bin/xargs"
 CAT="/bin/cat"
-CURRENT=$(cd $(dirname $0); pwd)
 
+CURRENT=$(cd $(dirname $0); pwd)
 INPUT_DIR="${CURRENT}/../themes/base/sass"
 OUTPUT_DIR="${CURRENT}/../themes/base/sass"
 CONCAT_PATH="${CURRENT}/../themes/base/style.css"
