@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# pid creation is based on
+# http://kirk.webfinish.com/2009/10/bash-shell-script-to-manage-pid-file-creationdeletion/
+
 cut="/usr/bin/cut"
 sass_convert="/usr/bin/sass-convert"
 
@@ -15,11 +18,12 @@ fi
 first=`echo $1| $cut -c1`
 case $first in
     /)
-        #absolute path is passed
+        # echo "absolute path is passed"
         target=$1
         ;;
     *)
-        current=$(cd $(dirname $0); pwd)
+        # echo "relative path is passed"
+        current=$(pwd)
         target=$(cd $current/$1; pwd)
         ;;
 esac
@@ -28,6 +32,57 @@ if [ ! -d $target ]; then
     echo "$target doesn't seem to exist"
     exit
 fi
+
+function pidfilename() {
+    myfile=$(basename "$0" .sh)
+    mypidfile=$TMPDIR$myfile.pid
+    echo $mypidfile
+}
+
+function cleanup () {
+    #Don't recurse in the exit trap
+    trap - INT TERM EXIT
+    #remove the pid file cleanly on exit
+    [[ -f "$mypidfile" ]] && rm "$mypidfile"
+    #add other post processing cleanup here
+    exit
+}
+
+function isrunning() {
+    pidfile="$1"
+    [[ ! -f "$pidfile" ]] && return 1  #pid file is nonexistent
+    procpid=$(<"$pidfile")
+    [[ -z "$procpid" ]] && return 1  #pid file contains no pid
+    # check process list for pid existence and is an instance of this script
+    [[ ! $(ps -p $procpid | grep $(basename $0)) == "" ]] && value=0 || value=1
+    return $value
+}
+
+function createpidfile() {
+    mypid=$1
+    pidfile=$2
+    #Close stderr, don't overwrite existing file, shove my pid in the lock file.
+    $(exec 2>&-; set -o noclobber; echo "$mypid" > "$pidfile") 
+    [[ ! -f "$pidfile" ]] && exit #Lock file creation failed
+    procpid=$(<"$pidfile")
+    [[ $mypid -ne $procpid ]] && {
+        # I'm not the pid in the lock file
+        # Is the process pid in the lockfile still running?
+        isrunning "$pidfile" || {
+            # No.  Kill the pidfile and relaunch ourselves properly.
+            rm "$pidfile"
+            # $0 $@ &
+            echo "other process is running"
+            exit
+        }
+        exit
+    }
+}
+
+mypidfile=$(pidfilename)
+ 
+createpidfile $$ "$mypidfile"
+trap 'cleanup' INT TERM EXIT
 
 filenames=$(find ${target} -type f -name *.css)
 
