@@ -1,14 +1,26 @@
 #!/bin/sh
 
+SUFFIX=" "
+if [ $2 ]; then
+    MASK="$1"
+    FILEPATH="$2"
+    SUFFIX=${FILEPATH##*.}
+fi
+
 SASS="/usr/bin/sass"
 FIND="/usr/bin/find"
 XARGS="/usr/bin/xargs"
 CAT="/bin/cat"
+
+if [[ -n $2 && $SUFFIX != "sass" ]];then
+    echo "only process .sass file change: $2"
+    exit
+fi
 
 CURRENT=$(cd $(dirname $0); pwd)
 INPUT_DIR="${CURRENT}/../themes/base/sass"
 OUTPUT_DIR="${CURRENT}/../themes/base/sass"
 CONCAT_PATH="${CURRENT}/../themes/base/style.css"
 
-`${SASS} --update ${INPUT_DIR}:${OUTPUT_DIR}`
-`${FIND} ${OUTPUT_DIR} -type f -name '*.css' | ${XARGS} ${CAT} > ${CONCAT_PATH}`
+${SASS} --update ${INPUT_DIR}:${OUTPUT_DIR}
+${FIND} ${OUTPUT_DIR} -type f -name '*.css' | ${XARGS} ${CAT} > ${CONCAT_PATH}
