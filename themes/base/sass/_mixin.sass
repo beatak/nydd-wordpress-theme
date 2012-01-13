@@ -1,0 +1,16 @@
+
+@mixin box-shadow($x : 5px, $y : 5px, $radius : 5px, $color : #666)
+  -moz-box-shadow: $x $y $radius $color
+  -webkit-box-shadow: $x $y $radius $color
+  box-shadow:  $x $y $radius $color
+
+@mixin box-shadow-ie($x : 5, $y : 5, $color : "grey")
+  filter: "progid:DXImageTransform.Microsoft.DropShadow( OffX:" + $x ", OffY:" + $y ", Color:\'" + $color + "\', Positive:\'true\' )"
+
+@mixin linear-gradient($default, $from, $to)
+  background-color: $default
+  background: -moz-linear-gradient($from, $to)
+  background: -o-linear-gradient($from, $to)
+  background: -webkit-linear-gradient($from, $to)
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to))
+
