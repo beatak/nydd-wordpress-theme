@@ -501,16 +501,18 @@ a {
   #access ul {
     font-size: 13px;
     list-style: none;
-    margin: 0 0 0 -0.813em;
-    padding-left: 0; }
+    margin: 0;
+    padding-left: 0;
+    display: block; }
   #access li {
     float: left;
-    position: relative; }
+    position: relative;
+    display: block; }
   #access a {
     color: #eeeeee;
     display: block;
     line-height: 3.333em;
-    padding: 0 1.213em;
+    padding: 0 15px;
     text-decoration: none; }
   #access ul ul {
     -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
