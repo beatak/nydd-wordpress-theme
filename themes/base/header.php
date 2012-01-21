@@ -68,6 +68,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.7.1.js" type="text/javascript"></script>
 
 	<header id="branding" role="banner">
 			<hgroup class="clearfix">
