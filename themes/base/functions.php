@@ -79,7 +79,8 @@ function twentyeleven_setup() {
 	// require( get_template_directory() . '/inc/theme-options.php' );
 
 	// Grab Twenty Eleven's Ephemera widget.
-	require( get_template_directory() . '/inc/widgets.php' );
+	// require( get_template_directory() . '/inc/widgets.php' );
+  remove_action( '_admin_menu', 'wp_widgets_add_menu' );
 
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
@@ -408,7 +409,9 @@ function twentyeleven_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'twentyeleven_widgets_init' );
+// let's remove widget for now
+// add_action( 'widgets_init', 'twentyeleven_widgets_init' );
+
 
 if ( ! function_exists( 'twentyeleven_content_nav' ) ) :
 /**
