@@ -61,7 +61,7 @@ body {
 
 #page {
   margin: 0 auto;
-  max-width: 1000px; }
+  /* max-width: 1000px */ }
 
 #branding {
   width: 100%;
@@ -76,8 +76,9 @@ body {
   width: 100%; }
 
 #content {
-  margin: 0 34% 0 7.6%;
-  width: 58.4%; }
+  /* margin: 0 34% 0 7.6% */
+  /* width: 58.4% */
+  /* background-color: #F00 */ }
 
 #secondary {
   float: right;
@@ -88,9 +89,9 @@ body {
 .singular #primary {
   margin: 0; }
 .singular #content {
-  margin: 0 7.6%;
+  /* margin: 0 7.6% */
   position: relative;
-  width: auto; }
+  /* width: auto */ }
 
 .left-sidebar.singular #content {
   margin: 0 7.6%;
@@ -614,10 +615,15 @@ a {
     text-transform: none; }
 
 .hentry, .no-results {
-  border-bottom: 1px solid #dddddd;
-  margin: 0 0 1.625em;
-  padding: 0 0 1.625em;
-  position: relative; }
+  /* border-bottom: 1px solid #dddddd */
+  /* margin: 0 0 1.625em */
+  /* padding: 0 0 1.625em */
+  /* position: relative */
+  width: 30%;
+  margin: 1%;
+  float: left;
+  border: 1px solid #999999;
+  background-color: white; }
 
 .hentry:last-child, .no-results {
   border-bottom: none; }
@@ -952,9 +958,10 @@ article.format-status .entry-content {
 
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
-  border-bottom: none;
-  padding: 4.875em 0 0;
-  position: relative; }
+  /*border-bottom: none */
+  /*padding: 4.875em 0 0 */
+  position: relative;
+  float: none; }
 .singular.page .hentry {
   padding: 3.5em 0 0; }
 .singular .entry-title {
