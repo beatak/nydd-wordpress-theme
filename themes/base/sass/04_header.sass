@@ -7,7 +7,7 @@
 #branding
   padding-bottom: 0
   position: fixed
-  z-index: 9999
+  z-index: $menu_zIndex
   @include linear-gradient(#222, #252525, #0a0a0a)
   @include box-shadow(0px, 1px, 2px, rgba(0, 0, 0, 0.4))
 
@@ -22,20 +22,30 @@
   height: $menu_height
   overflow: hidden
   a
-    color: #FFF
-    font-size: 16px
-    font-weight: bold
-    line-height: 1.3
-    text-decoration: none
-    vertical-align: top
-    &:hover, &:focus, &:active
-      color: #CCC
+    font-size: 0px /* FIXME: research for the better way  */
+    display: block
+    width: $site_title_w
+    height: $menu_height
+    background-image: $site_title_bg
+    background-repeat: no-repeat
+    background-position: $site_title_padding_hor (($menu_height - $site_title_h) / 2)
+    padding-right: $site_title_padding_hor
+    padding-left: $site_title_padding_hor
+
+#moving-image
+  width: $moving_image_w
+  height: $moving_image_h
+  background-image: $moving_image_bg
+  background-repeat: no-repeat
+  background-position: 0
+  z-index: $moving_image_zIndex
+  position: absolute
 
 #site-description
   display: none
   /* display: block 
   float: left
-  height: 43px
+  height: $menu_height
   vertical-align: top
   clear: none
   overflow: hidden

@@ -447,7 +447,7 @@ a {
 #branding {
   padding-bottom: 0;
   position: fixed;
-  z-index: 9999;
+  z-index: 5000;
   background-color: #222222;
   background: -moz-linear-gradient(#252525, #0a0a0a);
   background: -o-linear-gradient(#252525, #0a0a0a);
@@ -466,14 +466,24 @@ a {
   height: 43px;
   overflow: hidden; }
   #site-title a {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.3;
-    text-decoration: none;
-    vertical-align: top; }
-    #site-title a:hover, #site-title a:focus, #site-title a:active {
-      color: #cccccc; }
+    font-size: 0px;
+    display: block;
+    width: 200px;
+    height: 43px;
+    background-image: url(images/nydd.png);
+    background-repeat: no-repeat;
+    background-position: 10px 4.5px;
+    padding-right: 10px;
+    padding-left: 10px; }
+
+#moving-image {
+  width: 200px;
+  height: 71px;
+  background-image: url(images/nydd-big.png);
+  background-repeat: no-repeat;
+  background-position: 0;
+  z-index: 5100;
+  position: absolute; }
 
 #site-description {
   display: none;
@@ -511,7 +521,7 @@ a {
   #access a {
     color: #eeeeee;
     display: block;
-    line-height: 3.333em;
+    line-height: 43px;
     padding: 0 15px;
     text-decoration: none; }
   #access ul ul {
@@ -522,7 +532,7 @@ a {
     float: left;
     margin: 0;
     position: absolute;
-    top: 3.333em;
+    top: 43px;
     left: 0;
     width: 188px;
     z-index: 99999; }
@@ -587,7 +597,7 @@ a {
  *----------------------------------------------- */
 #main {
   clear: both;
-  padding: 1.625em 0 0; }
+  padding: 71px 0 0; }
 
 .page-title {
   color: #666666;
