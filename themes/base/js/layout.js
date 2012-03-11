@@ -15,31 +15,35 @@ function () {
   };
   Nydd.ColumnLayout.pushSlot = function (elm) {
     slots[slots.length] = elm;
-    var $elm = $(elm);
     if (slots.length === 1) {
-      $elm
-        .addClass('left-col')
-        .data('column', true);
-      lastLeft = elm;
+      setColumnSide(elm, true);
       return;
     }
     else if (slots.length === 2) {
-      $elm
-        .addClass('right-col')
-        .data('column', false);
-      lastRight = elm;
+      setColumnSide(elm, false);
       return;
     }
     if (checkSide()) {
-      $elm
+      setColumnSide(elm, true);
+    }
+    else {
+      setColumnSide(elm, false);
+    }
+  };
+
+  var setColumnSide = function (elm, isLeft) {
+    if (isLeft) {
+      $(elm)
         .addClass('left-col')
-        .data('column', true);
+        .data('column', true)
+        .removeClass('not-in-column');
       lastLeft = elm;
     }
     else {
-      $elm
+      $(elm)
         .addClass('right-col')
-        .data('column', false);
+        .data('column', false)
+        .removeClass('not-in-column');
       lastRight = elm;
     }
   };
