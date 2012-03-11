@@ -80,6 +80,10 @@ body {
   /* width: 58.4% */
   /* background-color: #F00 */ }
 
+body.home #content {
+  width: 1000px;
+  margin: 0 auto; }
+
 #secondary {
   float: right;
   margin-right: 7.6%;
@@ -271,7 +275,7 @@ body {
   background: #e2e2e2; }
 
 #page {
-  background: white; }
+  /* background: white */ }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -473,7 +477,7 @@ a {
     height: 43px;
     background-image: url(images/nydd.png);
     background-repeat: no-repeat;
-    background-position: 10px 4.5px;
+    background-position: 96px 0px;
     padding-right: 10px;
     padding-left: 10px; }
 
@@ -619,11 +623,25 @@ a {
   /* margin: 0 0 1.625em */
   /* padding: 0 0 1.625em */
   /* position: relative */
-  width: 30%;
-  margin: 1%;
-  float: left;
-  border: 1px solid #999999;
   background-color: white; }
+
+.home .hentry, .home .no-results {
+  width: 47%;
+  margin: 1%;
+  border: 1px solid #999999;
+  -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6); }
+  .home .hentry.not-in-column, .home .no-results.not-in-column {
+    visibility: hidden; }
+  .home .hentry.left-col, .home .no-results.left-col {
+    float: left;
+    clear: left;
+    visibility: visible; }
+  .home .hentry.right-col, .home .no-results.right-col {
+    float: right;
+    clear: right;
+    visibility: visible; }
 
 .hentry:last-child, .no-results {
   border-bottom: none; }
@@ -909,27 +927,29 @@ embed, iframe, object {
     margin: 5px 0 10px; }
 
 /* Comments link */
-.entry-header .comments-link a {
-  background: #eeeeee url(images/comment-bubble.png) no-repeat;
-  color: #666666;
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 35px;
-  overflow: hidden;
-  padding: 0 0 0;
-  position: absolute;
-  top: 1.5em;
-  right: 0;
-  text-align: center;
-  text-decoration: none;
-  width: 43px;
-  height: 36px; }
-  .entry-header .comments-link a:hover, .entry-header .comments-link a:focus, .entry-header .comments-link a:active {
-    background-color: #1982d1;
-    color: white;
-    color: rgba(255, 255, 255, 0.8); }
-.entry-header .comments-link .leave-reply {
-  visibility: hidden; }
+.entry-header .comments-link {
+  position: relative; }
+  .entry-header .comments-link a {
+    background: #eeeeee url(images/comment-bubble.png) no-repeat;
+    color: #666666;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 35px;
+    overflow: hidden;
+    padding: 0 0 0;
+    position: absolute;
+    top: 1.5em;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 43px;
+    height: 36px; }
+    .entry-header .comments-link a:hover, .entry-header .comments-link a:focus, .entry-header .comments-link a:active {
+      background-color: #1982d1;
+      color: white;
+      color: rgba(255, 255, 255, 0.8); }
+  .entry-header .comments-link .leave-reply {
+    visibility: hidden; }
 .entry-header .entry-format {
   color: #666666;
   font-size: 10px;

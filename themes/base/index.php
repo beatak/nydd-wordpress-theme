@@ -23,9 +23,7 @@ get_header(); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
 					<?php get_template_part( 'content', get_post_format() ); ?>
-
 				<?php endwhile; ?>
 
 				<?php twentyeleven_content_nav( 'nav-below' ); ?>
@@ -47,6 +45,12 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
+
+  <?php 
+    if (is_home() || is_front_page()) {
+      script_src('layout', '/wp-content/themes/nydd/js/layout.js');
+    }
+  ?>
 
 <?php /*get_sidebar();*/ ?>
 <?php get_footer(); ?>

@@ -29,5 +29,21 @@
 
 <?php wp_footer(); ?>
 
+<?php
+global $arr_script_src;
+if (!empty($arr_script_src)) {
+  foreach($arr_script_src as $handle => $src) {
+    echo "<script type=\"text/javascript\" src=\"$src\"></script>\n";
+  }
+}
+
+global $arr_script_data;
+if (!empty($arr_script_data)) {
+  echo "<script type=\"text/javascript\">\n";
+  echo implode("\n", $arr_script_data);
+  echo "</script>\n";
+  } 
+?>
+
 </body>
 </html>

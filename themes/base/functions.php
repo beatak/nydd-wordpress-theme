@@ -606,3 +606,19 @@ function twentyeleven_get_theme_options() {
 
 	return apply_filters( 'twentyeleven_default_theme_options', $default_theme_options );
 }
+
+global $arr_script_data;
+$arr_script_data = array();
+function script_data($js) {  
+  global $arr_script_data;;
+  $arr_script_data[] = $js;
+}
+
+global $arr_script_src;
+$arr_script_src = array();
+function script_src($handle, $src) {  
+  global $arr_script_src;
+  if (empty($arr_script_src[$handle])) {
+    $arr_script_src[$handle] = $src;
+  }
+}

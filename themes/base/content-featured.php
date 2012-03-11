@@ -9,7 +9,19 @@
 
 global $feature_class;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( $feature_class ); ?>>
+<?php
+$my_classes = array();
+if (is_home() || is_front_page()) {
+  array_push($my_classes, 'not-in-column');
+}
+if ( !empty($feature_class) ) {
+  if ( !is_array( $feature_class ) ) {
+    $feature_class = implode(' ', $feature_class);
+  }
+  array_push($my_classes, $feature_class);
+}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($my_classes); ?>>
 	<header class="entry-header">
 		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 

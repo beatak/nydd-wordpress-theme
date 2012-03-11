@@ -7,8 +7,13 @@
  * @since Twenty Eleven 1.0
  */
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'intro' ); ?>>
+<?php
+$my_classes = array('intro');
+if (is_home() || is_front_page()) {
+  array_push($my_classes, 'not-in-column');
+}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($my_classes); ?>>
 	<header class="entry-header">
 		<h2 class="entry-title"><?php the_title(); ?></h2>
 	</header><!-- .entry-header -->
