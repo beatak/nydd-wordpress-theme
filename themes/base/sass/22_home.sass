@@ -1,0 +1,29 @@
+@import _mixin
+@import _statics
+
+/* =Home
+ *-----------------------------------------------
+
+.home
+  #content
+    width: $home_content_width
+    margin: $home_content_margin
+
+  .hentry, .no-results
+    width: $home_article_width
+    margin: $home_article_margin
+    border: 1px solid #999
+    @include box-shadow(3px, 3px, 3px, rgba(0, 0, 0, 0.6))
+    &.not-in-column
+      visibility: hidden
+    &.left-col
+      float: left
+      clear: left
+      visibility: visible
+    &.right-col
+      float: right
+      clear: right
+      visibility: visible
+
+  article > header
+    display: inline-block
