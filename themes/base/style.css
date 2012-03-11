@@ -2282,4 +2282,5 @@ p.comment-form-comment {
     clear: right;
     visibility: visible; }
 .home article > header {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
