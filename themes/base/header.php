@@ -119,7 +119,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->
 	</header><!-- #branding -->
-  <div id="moving-image">&nbsp;</div>
+  <div id="moving-image"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">&nbsp;</a></div>
 
 
 <div id="page" class="hfeed">

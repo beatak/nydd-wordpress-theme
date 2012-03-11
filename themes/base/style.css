@@ -485,6 +485,11 @@ a {
   background-position: 0;
   z-index: 5100;
   position: absolute; }
+  #moving-image > a:link {
+    display: block;
+    width: 200px;
+    height: 71px;
+    text-decoration: none; }
 
 #site-description {
   display: none;
